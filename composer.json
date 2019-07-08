@@ -17,7 +17,12 @@
     ],
     "require": {
         "php": "^7.1",
-        "illuminate/support": "5.8.*"
+        "astrotomic/laravel-translatable": "^11.1",
+        "davide-casiraghi/laravel-form-partials": "^1.0",
+        "illuminate/support": "5.8.*",
+        "intervention/image": "^2.5",
+        "mcamara/laravel-localization": "^1.3",
+        "nesbot/carbon": "^2.20"
     },
     "require-dev": {
         "orchestra/testbench": "3.8.*",

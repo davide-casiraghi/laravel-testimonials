@@ -115,8 +115,6 @@ class TestimonialGroupTranslationController extends Controller
     {
         //dd($testimonialTranslation);
         $testimonialGroupTranslation->title = $request->get('title');
-        $testimonialGroupTranslation->description = $request->get('description');
-        $testimonialGroupTranslation->button_text = $request->get('button_text');
 
         switch ($saveOrUpdate) {
             case 'save':

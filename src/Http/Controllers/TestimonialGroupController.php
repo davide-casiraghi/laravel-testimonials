@@ -64,8 +64,7 @@ class TestimonialGroupController extends Controller
      */
     public function create()
     {
-        return view('laravel-testimonials::testimonialGroups.create')
-                    ->with('buttonColorArray', $this->getButtonColorArray());
+        return view('laravel-testimonials::testimonialGroups.create');
     }
 
     /***************************************************************************/
@@ -129,8 +128,7 @@ class TestimonialGroupController extends Controller
     {
         $testimonialGroup = TestimonialGroup::find($testimonialGroupId);
 
-        return view('laravel-testimonials::testimonialGroups.edit', compact('testimonialGroup'))
-                    ->with('buttonColorArray', $this->getButtonColorArray());
+        return view('laravel-testimonials::testimonialGroups.edit', compact('testimonialGroup'));
     }
 
     /***************************************************************************/
@@ -160,7 +158,7 @@ class TestimonialGroupController extends Controller
         $this->saveOnDb($request, $testimonialGroup);
 
         return redirect()->route('testimonialGroups.index')
-                            ->with('success', 'Testimonial image updated succesfully');
+                            ->with('success', 'Testimonial group updated succesfully');
     }
 
     /***************************************************************************/
@@ -177,7 +175,7 @@ class TestimonialGroupController extends Controller
         $testimonialGroup->delete();
 
         return redirect()->route('testimonialGroups.index')
-                            ->with('success', 'Testimonial image deleted succesfully');
+                            ->with('success', 'Testimonial group deleted succesfully');
     }
 
     /***************************************************************************/
@@ -191,37 +189,9 @@ class TestimonialGroupController extends Controller
     public function saveOnDb($request, $testimonialGroup)
     {
         $testimonialGroup->translateOrNew('en')->title = $request->get('title');
-        $testimonialGroup->translateOrNew('en')->description = $request->get('description');
-        $testimonialGroup->translateOrNew('en')->button_text = $request->get('button_text');
-        $testimonialGroup->translateOrNew('en')->image_alt = $request->get('image_alt');
-
-        $testimonialGroup->bkg_color = $request->get('bkg_color');
-        $testimonialGroup->text_alignment = $request->get('text_alignment');
-        $testimonialGroup->group_title_color = $request->get('group_title_color');
-        $testimonialGroup->group_title_font_size = $request->get('group_title_font_size');
-        $testimonialGroup->testimonial_title_color = $request->get('testimonial_title_color');
-        $testimonialGroup->testimonial_title_font_size = $request->get('testimonial_title_font_size');
-        $testimonialGroup->description_font_size = $request->get('description_font_size');
-        $testimonialGroup->link_style = $request->get('link_style');
-        $testimonialGroup->button_url = $request->get('button_url');
-        $testimonialGroup->button_color = $request->get('button_color');
-        $testimonialGroup->button_corners = $request->get('button_corners');
-        $testimonialGroup->background_type = $request->get('background_type');
-        $testimonialGroup->background_image = $request->get('background_image');
-        $testimonialGroup->background_image_position = $request->get('background_image_position');
-        $testimonialGroup->opacity = $request->get('opacity');
-        $testimonialGroup->justify_content = $request->get('justify_content');
-        $testimonialGroup->flex_wrap = $request->get('flex_wrap');
-        $testimonialGroup->flex_flow = $request->get('flex_flow');
-        $testimonialGroup->testimonials_flex = $request->get('testimonials_flex');
-        $testimonialGroup->testimonials_padding = $request->get('testimonials_padding');
-        $testimonialGroup->testimonials_box_sizing = $request->get('testimonials_box_sizing');
-        $testimonialGroup->testimonials_round_images = $request->get('testimonials_round_images');
-        $testimonialGroup->testimonials_images_width = $request->get('testimonials_images_width');
-        $testimonialGroup->testimonials_images_hide_mobile = $request->get('testimonials_images_hide_mobile');
-        $testimonialGroup->icons_size = $request->get('icons_size');
-
-        //dd($testimonialGroup);
+        $testimonialGroup->quotes_color = $request->get('quotes_color');
+        $testimonialGroup->max_characters = $request->get('max_characters');
+        $testimonialGroup->show_title = $request->get('show_title');
 
         // Testimonial group image upload
         $imageSubdir = 'testimonial_groups';
@@ -232,38 +202,4 @@ class TestimonialGroupController extends Controller
         $testimonialGroup->save();
     }
 
-    /***************************************************************************/
-
-    /**
-     * Return and array with the button possible color options.
-     *
-     * @return array
-     */
-    public static function getButtonColorArray()
-    {
-        $ret = [
-             'press-red' => 'Red',
-             'press-pink' => 'Pink',
-             'press-purple' => 'Purple',
-             'press-deeppurple' => 'Deep purple',
-             'press-indigo' => 'Indigo',
-             'press-blue' => 'Blue',
-             'press-lightblue' => 'Light blue',
-             'press-cyan' => 'Cyan',
-             'press-teal' => 'Teal',
-             'press-green' => 'Green',
-             'press-lightgreen' => 'Light green',
-             'press-lime' => 'Lime',
-             'press-yellow' => 'Yellow',
-             'press-amber' => 'Amber',
-             'press-orange' => 'Orange',
-             'press-deeporange' => 'Deeporange',
-             'press-brown' => 'Brown',
-             'press-grey' => 'Grey',
-             'press-bluegrey' => 'Blue grey',
-             'press-black' => 'Black',
-         ];
-
-        return $ret;
-    }
 }

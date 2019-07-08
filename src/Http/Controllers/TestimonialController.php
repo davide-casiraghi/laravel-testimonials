@@ -34,18 +34,18 @@ class TestimonialController extends Controller
 
         if ($searchKeywords) {
             $testimonials = Testimonial::
-                        select('testimonial_translations.testimonial_id AS id', 'title', 'body', 'button_text', 'image_file_name', 'button_url', 'locale')
+                        select('testimonial_translations.testimonial_id AS id', 'name', 'body', 'image_file_name', 'locale')
                         ->join('testimonial_translations', 'testimonials.id', '=', 'testimonial_translations.testimonial_id')
-                        ->orderBy('title')
-                        ->where('title', 'like', '%'.$searchKeywords.'%')
+                        ->orderBy('name')
+                        ->where('name', 'like', '%'.$searchKeywords.'%')
                         ->where('locale', 'en')
                         ->paginate(20);
         } else {
             $testimonials = Testimonial::
-                        select('testimonial_translations.testimonial_id AS id', 'title', 'body', 'button_text', 'image_file_name', 'button_url', 'locale')
+                        select('testimonial_translations.testimonial_id AS id', 'name', 'body', 'image_file_name', 'locale')
                         ->join('testimonial_translations', 'testimonials.id', '=', 'testimonial_translations.testimonial_id')
                         ->where('locale', 'en')
-                        ->orderBy('title')
+                        ->orderBy('name')
                         ->paginate(20);
         }
 
@@ -80,7 +80,7 @@ class TestimonialController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'title' => 'required',
+                'name' => 'required',
             ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
@@ -94,7 +94,7 @@ class TestimonialController extends Controller
         $this->saveOnDb($request, $testimonial);
 
         return redirect()->route('testimonials.index')
-                            ->with('success', 'Testimonial image added succesfully');
+                            ->with('success', 'Testimonial added succesfully');
     }
 
     /***************************************************************************/
@@ -144,7 +144,7 @@ class TestimonialController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'title' => 'required',
+                'name' => 'required',
             ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
@@ -158,7 +158,7 @@ class TestimonialController extends Controller
         $this->saveOnDb($request, $testimonial);
 
         return redirect()->route('testimonials.index')
-                            ->with('success', 'Testimonial image updated succesfully');
+                            ->with('success', 'Testimonial updated succesfully');
     }
 
     /***************************************************************************/
@@ -175,7 +175,7 @@ class TestimonialController extends Controller
         $testimonial->delete();
 
         return redirect()->route('testimonials.index')
-                            ->with('success', 'Testimonial image deleted succesfully');
+                            ->with('success', 'Testimonial deleted succesfully');
     }
 
     /***************************************************************************/
@@ -188,18 +188,13 @@ class TestimonialController extends Controller
      */
     public function saveOnDb($request, $testimonial)
     {
-        $testimonial->translateOrNew('en')->title = $request->get('title');
+        $testimonial->translateOrNew('en')->name = $request->get('name');
         $testimonial->translateOrNew('en')->body = $request->get('body');
-        $testimonial->translateOrNew('en')->button_text = $request->get('button_text');
-        $testimonial->translateOrNew('en')->image_alt = $request->get('image_alt');
+        $testimonial->translateOrNew('en')->profession = $request->get('profession');
 
         $testimonial->testimonials_group = $request->get('testimonials_group');
-        $testimonial->testimonial_flex = $request->get('testimonial_flex');
-        $testimonial->separator_color = $request->get('separator_color');
+        $testimonial->gender = $request->get('gender');
         $testimonial->image_file_name = $request->get('image_file_name');
-        $testimonial->fontawesome_icon_class = $request->get('fontawesome_icon_class');
-        $testimonial->icon_color = $request->get('icon_color');
-        $testimonial->button_url = $request->get('button_url');
 
         // Testimonial image upload
         $imageSubdir = 'testimonials';
@@ -219,7 +214,7 @@ class TestimonialController extends Controller
      */
     public static function getTestimonialGroupsArray()
     {
-        $ret = TestimonialGroup::listsTranslations('title')->orderBy('title')->pluck('title', 'id');
+        $ret = TestimonialGroup::listsTranslations('name')->orderBy('name')->pluck('name', 'id');
 
         return $ret;
     }

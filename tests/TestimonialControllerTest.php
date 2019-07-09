@@ -3,9 +3,9 @@
 namespace DavideCasiraghi\LaravelTestimonials\Tests;
 
 use Illuminate\Foundation\Testing\WithFaker;
-use DavideCasiraghi\LaravelTestimonials\Models\Column;
+use DavideCasiraghi\LaravelTestimonials\Models\Testimonial;
 
-class ColumnControllerTest extends TestCase
+class TestimonialControllerTest extends TestCase
 {
     use WithFaker;
 
@@ -14,7 +14,7 @@ class ColumnControllerTest extends TestCase
     /** @test */
     public function it_runs_the_test_testimonial_factory()
     {
-        $testimonial = factory(Column::class)->create([
+        $testimonial = factory(Testimonial::class)->create([
                             'title' => 'test title',
                         ]);
         $this->assertDatabaseHas('testimonial_translations', [
@@ -71,7 +71,7 @@ class ColumnControllerTest extends TestCase
         $this->authenticateAsAdmin();
         $response = $this->post('/testimonials', []);
         $response->assertSessionHasErrors();
-        $this->assertNull(Column::first());
+        $this->assertNull(Testimonial::first());
     }
 
     /** @test */
@@ -79,7 +79,7 @@ class ColumnControllerTest extends TestCase
     {
         $this->authenticate();
 
-        $testimonial = factory(Column::class)->create();
+        $testimonial = factory(Testimonial::class)->create();
         $response = $this->get('/testimonials/'.$testimonial->id);
         $response->assertViewIs('laravel-testimonials::testimonials.show')
                  ->assertStatus(200);
@@ -90,7 +90,7 @@ class ColumnControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
 
-        $testimonial = factory(Column::class)->create();
+        $testimonial = factory(Testimonial::class)->create();
         $response = $this->get("/testimonials/{$testimonial->id}/edit");
         $response->assertViewIs('laravel-testimonials::testimonials.edit')
                  ->assertStatus(200);
@@ -100,7 +100,7 @@ class ColumnControllerTest extends TestCase
     public function it_updates_valid_testimonial()
     {
         $this->authenticateAsAdmin();
-        $testimonial = factory(Column::class)->create();
+        $testimonial = factory(Testimonial::class)->create();
 
         $attributes = ([
             'title' => 'test title updated',
@@ -118,7 +118,7 @@ class ColumnControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
 
-        $testimonial = factory(Column::class)->create();
+        $testimonial = factory(Testimonial::class)->create();
         $response = $this->put('/testimonials/'.$testimonial->id, []);
         $response->assertSessionHasErrors();
     }
@@ -128,7 +128,7 @@ class ColumnControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
 
-        $testimonial = factory(Column::class)->create();
+        $testimonial = factory(Testimonial::class)->create();
 
         $response = $this->delete('/testimonials/'.$testimonial->id);
         $response->assertRedirect('/testimonials');

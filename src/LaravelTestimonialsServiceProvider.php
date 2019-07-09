@@ -2,6 +2,7 @@
 
 namespace DavideCasiraghi\LaravelTestimonials;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelTestimonialsServiceProvider extends ServiceProvider
@@ -14,10 +15,31 @@ class LaravelTestimonialsServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-testimonials');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-testimonials');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-testimonials');
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+
+        if (! class_exists('CreateTestimonialsTable')) {
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_testimonials_table.php.stub' => database_path('migrations/'.Carbon::now()->format('Y_m_d_Hmsu').'_create_testimonials_table.php'),
+            ], 'migrations');
+        }
+        if (! class_exists('CreateTestimonialTranslationsTable')) {
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_testimonial_translations_table.php.stub' => database_path('migrations/'.Carbon::now()->format('Y_m_d_Hmsu').'_create_testimonial_translations_table.php'),
+            ], 'migrations');
+        }
+        if (! class_exists('CreateTestimonialGroupsTable')) {
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_testimonial_groups_table.php.stub' => database_path('migrations/'.Carbon::now()->format('Y_m_d_Hmsu').'_create_testimonial_groups_table.php'),
+            ], 'migrations');
+        }
+        if (! class_exists('CreateTestimonialGroupTranslationsTable')) {
+            $this->publishes([
+                __DIR__.'/../database/migrations/create_testimonial_group_translations_table.php.stub' => database_path('migrations/'.Carbon::now()->format('Y_m_d_Hmsu').'_create_testimonial_group_translations_table.php'),
+            ], 'migrations');
+        }
 
         if ($this->app->runningInConsole()) {
             $this->publishes([

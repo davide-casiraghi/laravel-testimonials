@@ -14,7 +14,7 @@ use Faker\Generator as Faker;
 
 $factory->define(DavideCasiraghi\LaravelTestimonials\Models\Testimonial::class, function (Faker $faker) {
     return [
-        'title:en' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'name:en' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'body:en' => $faker->paragraph,
         'profession:en' => $faker->sentence($nbWords = 3, $variableNbWords = true),
         'testimonials_group' => 1,

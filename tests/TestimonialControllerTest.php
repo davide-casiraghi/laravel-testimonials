@@ -15,11 +15,11 @@ class TestimonialControllerTest extends TestCase
     public function it_runs_the_test_testimonial_factory()
     {
         $testimonial = factory(Testimonial::class)->create([
-                            'title' => 'test title',
+                            'name' => 'test name',
                         ]);
         $this->assertDatabaseHas('testimonial_translations', [
                                 'locale' => 'en',
-                                'title' => 'test title',
+                                'name' => 'test name',
                 ]);
     }
 
@@ -48,8 +48,9 @@ class TestimonialControllerTest extends TestCase
         $this->authenticateAsAdmin();
 
         $data = [
-            'title' => 'test title',
-            'description' => 'test description',
+            'name' => 'test title',
+            'body' => 'test body',
+            'profession' => 'test profession',
             'testimonials_group' => 1,
             'image_file_name' => 'image_test_1.jpg',
             'fontawesome_icon_class' => 'fa-hand-heart',
@@ -103,8 +104,9 @@ class TestimonialControllerTest extends TestCase
         $testimonial = factory(Testimonial::class)->create();
 
         $attributes = ([
-            'title' => 'test title updated',
+            'name' => 'test title updated',
             'body' => 'test body updated',
+            'profession' => 'test profession',
           ]);
 
         $response = $this->followingRedirects()

@@ -1,6 +1,6 @@
 <?php
 
-namespace DavideCasiraghi\LaravelColumns\Http\Controllers;
+namespace DavideCasiraghi\LaravelTestimonials\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Bus\DispatchesJobs;

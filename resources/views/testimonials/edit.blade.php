@@ -22,10 +22,10 @@
                     {{-- Title  --}}
                     <div class="col-12">
                         @include('laravel-form-partials::input', [
-                            'title' => 'Title',
-                            'name' => 'title',
+                            'title' => 'Name',
+                            'name' => 'name',
                             'placeholder' => '', 
-                            'value' => $testimonial->title,
+                            'value' => $testimonial->name,
                         ])
                     </div>
                     
@@ -38,13 +38,31 @@
                         ])
                     </div>
                     
-                    {{-- Button text --}}
+                    {{-- Profession --}}
                     <div class="col-12">
                         @include('laravel-form-partials::input', [
-                            'title' => 'Button text',
-                            'name' => 'button_text',
+                            'title' => 'Profession',
+                            'name' => 'profession',
                             'placeholder' => '', 
-                            'value' => $testimonial->button_text,
+                            'value' => $testimonial->profession,
+                        ])
+                    </div>
+                    
+                    {{-- Gender --}}
+                    <div class="col-12">
+                        @include('laravel-form-partials::select', [
+                              'title' => "Gender",
+                              'name' => 'gender',
+                              'placeholder' => "choose one...", 
+                              'records' => [
+                                 'm' => 'M',
+                                 'f' => 'F',
+                              ],
+                              'liveSearch' => 'false',
+                              'mobileNativeMenu' => true,
+                              'selected' => $testimonial->gender,
+                              'required' => false,
+                              'tooltip' => '',
                         ])
                     </div>
                     
@@ -63,30 +81,6 @@
                         ])
                     </div>
                     
-                    {{-- Flex  --}}
-                    <div class="col-12">
-                        @include('laravel-form-partials::input', [
-                            'title' => 'Flex',
-                            'name' => 'testimonial_flex',
-                            'placeholder' => '', 
-                            'value' => $testimonial->testimonial_flex,
-                            'required' => true,
-                            'tooltip' => 'The flex property applied to the specific testimonial. Eg. 1 0 320px (grow shrink basis) or 0 1 auto',
-                        ])
-                    </div>
-                    
-                    {{-- Separator color --}}
-                    <div class="col-12">
-                        @include('laravel-form-partials::input', [
-                            'title' => 'Separator color',
-                            'name' => 'separator_color',
-                            'placeholder' => '', 
-                            'value' => $testimonial->separator_color,
-                            'required' => true,
-                            'tooltip' => 'The color of separator between title and text',
-                        ])
-                    </div>
-                    
                     {{-- Image --}}
                     @include('laravel-form-partials::upload-image', [
                           'title' => 'Testimonial image',
@@ -94,52 +88,6 @@
                           'folder' => 'testimonials',
                           'value' => $testimonial->image_file_name,
                     ]) 
-                    
-                    {{-- Image alt --}}
-                    <div class="col-12">
-                        @include('laravel-form-partials::input', [
-                            'title' => 'Image alt',
-                            'name' => 'image_alt',
-                            'placeholder' => '', 
-                            'value' => $testimonial->image_alt,
-                        ])
-                    </div>
-                    
-                    {{-- Icons fontawesome --}}
-                    <div class="col-12">
-                        @include('laravel-form-partials::input', [
-                            'title' =>  'Icons fontawesome',
-                            'name' => 'fontawesome_icon_class',
-                            'tooltip' => 'Font awesome icon color.',
-                            'placeholder' => 'fa-user-alt', 
-                            'value' => $testimonial->fontawesome_icon_class,
-                            'required' => false,
-                        ])
-                    </div>
-                    
-                    {{-- Icon color --}}
-                    <div class="col-12">
-                        @include('laravel-form-partials::input', [
-                            'title' =>  'Icon color',
-                            'name' => 'icon_color',
-                            'tooltip' => 'Font awesome icon color.',
-                            'placeholder' => '#HEX', 
-                            'value' => $testimonial->icon_color,
-                            'required' => false,
-                        ])
-                    </div>
-                    
-                    {{-- Button Url --}}
-                    <div class="col-12">
-                        @include('laravel-form-partials::input', [
-                            'title' =>  'Button Url',
-                            'name' => 'button_url',
-                            'tooltip' => '',
-                            'placeholder' => 'https://...', 
-                            'value' => $testimonial->button_url,
-                            'required' => false,
-                        ])
-                    </div>
                     
                     <div class="col-12">
                         @include('laravel-form-partials::buttons-back-submit', [

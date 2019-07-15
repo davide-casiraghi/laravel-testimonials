@@ -37,7 +37,7 @@ class TestimonialControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
 
-        $this->get('testimonials/create')
+        $this->get('testimonials/create')->dump();
             ->assertViewIs('laravel-testimonials::testimonials.create')
             ->assertStatus(200);
     }

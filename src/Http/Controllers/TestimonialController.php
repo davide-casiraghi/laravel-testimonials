@@ -214,7 +214,7 @@ class TestimonialController extends Controller
      */
     public static function getTestimonialGroupsArray()
     {
-        $ret = TestimonialGroup::listsTranslations('name')->orderBy('name')->pluck('name', 'id');
+        $ret = TestimonialGroup::listsTranslations('title')->orderBy('title')->pluck('title', 'id');
 
         return $ret;
     }

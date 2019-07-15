@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \DavideCasiraghi\LaravelTestimonials\Skeleton\SkeletonClass
  */
-class LaravelTestimonialsFacade extends Facade
+class LaravelTestimonials extends Facade
 {
     /**
      * Get the registered name of the component.

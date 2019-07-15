@@ -52,7 +52,7 @@
                 "DavideCasiraghi\\LaravelTestimonials\\LaravelTestimonialsServiceProvider"
             ],
             "aliases": {
-                "LaravelTestimonials": "DavideCasiraghi\\LaravelTestimonials\\LaravelTestimonialsFacade"
+                "LaravelTestimonials": "DavideCasiraghi\\LaravelTestimonials\\LaravelTestimonials"
             }
         }
     }

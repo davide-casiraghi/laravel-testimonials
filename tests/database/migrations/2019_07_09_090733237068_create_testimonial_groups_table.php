@@ -13,7 +13,7 @@ class CreateTestimonialGroupsTable extends Migration
             $table->string('quotes_color')->nullable();
             $table->integer('max_characters')->nullable();
             $table->boolean('show_title')->default(0)->nullable();
-            
+
             $table->timestamps();
         });
     }

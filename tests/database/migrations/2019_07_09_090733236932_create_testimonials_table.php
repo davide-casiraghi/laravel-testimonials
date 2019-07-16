@@ -10,11 +10,11 @@ class CreateTestimonialsTable extends Migration
     {
         Schema::create('testimonials', function (Blueprint $table) {
             $table->increments('id');
-            
+
             $table->integer('testimonials_group')->nullable();
             $table->string('gender')->nullable();
             $table->string('image_file_name')->nullable();
-            
+
             $table->timestamps();
         });
     }

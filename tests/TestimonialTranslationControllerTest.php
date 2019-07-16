@@ -28,7 +28,7 @@ class TestimonialTranslationControllerTest extends TestCase
         $this->authenticateAsAdmin();
 
         $testimonial = factory(Testimonial::class)->create();
-        
+
         $data = [
             'testimonial_id' => $testimonial->id,
             'language_code' => 'es',

@@ -5,12 +5,12 @@ namespace DavideCasiraghi\LaravelTestimonials\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
-use DavideCasiraghi\LaravelTestimonials\Models\Testimonial;
 use Intervention\Image\ImageManagerStatic as Image;
-use DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroup;
-use DavideCasiraghi\LaravelTestimonials\Facades\LaravelTestimonials;
+use DavideCasiraghi\LaravelTestimonials\Models\Testimonial;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroup;
 use DavideCasiraghi\LaravelFormPartials\Facades\LaravelFormPartials;
+use DavideCasiraghi\LaravelTestimonials\Facades\LaravelTestimonials;
 
 class TestimonialController extends Controller
 {

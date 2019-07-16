@@ -6,11 +6,9 @@ use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use DavideCasiraghi\LaravelTestimonials\Models\Testimonial;
-use Intervention\Image\ImageManagerStatic as Image;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroup;
 use DavideCasiraghi\LaravelTestimonials\Facades\LaravelTestimonials;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use DavideCasiraghi\LaravelFormPartials\Facades\LaravelFormPartials;
 
 class TestimonialGroupController extends Controller
 {
@@ -195,5 +193,4 @@ class TestimonialGroupController extends Controller
 
         $testimonialGroup->save();
     }
-
 }

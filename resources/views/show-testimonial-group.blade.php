@@ -23,11 +23,11 @@
                     {{-- Text --}}
                     <h4 style='{{$testimonialGroupParameters['title_style']}}'>{{$testimonial->title}}</h4>
                     <img class='start-quote' src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=' data-src='/vendor/laravel-testimonials/assets/images/start-quote-{{$testimonialGroup->quotes_color}}.png' alt='Start Quote'>
-                    <p style='{{$testimonialGroupParameters['description_style']}}'>{{$testimonial->body}}</p> 
+                    <p>{{$testimonial->body}}</p> 
 					<img class='end-quote' src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=' data-src='/vendor/laravel-testimonials/assets/images/end-quote-{{$testimonialGroup->quotes_color}}.png' alt='End Quote'>		
                 
                     {{-- Author --}}
-                    <div class='author {{$testimonialGroupParameters['group_button_style']}}'>
+                    <div class='author {{$testimonialGroup->quotes_color}}'>
 		    			{{$testimonial->author}}
                         @if($testimonial->profession), {{$testimonial->profession}} @endif
 	    			</div>

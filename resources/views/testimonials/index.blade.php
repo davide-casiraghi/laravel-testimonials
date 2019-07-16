@@ -19,45 +19,20 @@
     
     
     {{-- List all the quotes --}}
-    <div class="quotesList my-4">
-        
-        {{--
-        @foreach ($testimonials as $testimonial)
-            <div class="row bg-white shadow-1 rounded mb-3 pb-2 pt-3 mx-1">
-                
-                <div class="col-12 py-1">
-                    <h5>{{ $testimonial->author }}</h5>
-                    <div class="">
-                        {{ $testimonial->text }}
-                    </div>
-                </div>
-                
-                <div class="col-12 pb-2">
-                    <form action="{{ route('testimonials.destroy',$testimonial->id) }}" method="POST">
-                        <a class="btn btn-primary float-right" href="{{ route('testimonials.edit',$testimonial->id) }}">Edit</a>
-                        
-                        @csrf
-                        @method('DELETE')
-
-                        <button type="submit" class="btn btn-link pl-0">Delete</button>
-                    </form>
-                </div>
-                
-            </div>
-        @endforeach
-        --}}
-        
-        
+    <div class="testimonialsList my-4">
+            
         @foreach ($testimonials as $testimonial)
                 <div class="row bg-white shadow-1 rounded mb-3 mx-1">
                     
                     <div class="col-12 pb-2 pt-3 px-3">
                         <div class="row">
                             
-                            {{-- Title --}}
-                            <div class="col-12 py-1 title">
-                                <h5 class="darkest-gray">{{ $testimonial->title }}</h5>
+                            {{-- Name --}}
+                            <div class="col-12 py-1 name">
+                                <h5 class="darkest-gray">{{ $testimonial->name }}</h5>
                             </div>
+                            
+                            {{-- Body --}}
                             <div class="col-12">
                                 @if($testimonial->translate('en')->body){{ $testimonial->translate('en')->body }}@endif
                             </div>

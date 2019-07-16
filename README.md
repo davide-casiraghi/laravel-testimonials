@@ -1,9 +1,9 @@
-# Very short description of the package
+# Laravel testimonials
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/davide-casiraghi/laravel-testimonials.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/laravel-testimonials)
 [![Build Status](https://img.shields.io/travis/davide-casiraghi/laravel-testimonials/master.svg?style=flat-square)](https://travis-ci.org/davide-casiraghi/laravel-testimonials)
 [![Quality Score](https://img.shields.io/scrutinizer/g/davide-casiraghi/laravel-testimonials.svg?style=flat-square)](https://scrutinizer-ci.com/g/davide-casiraghi/laravel-testimonials)
-[![Total Downloads](https://img.shields.io/packagist/dt/davide-casiraghi/laravel-testimonials.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/laravel-testimonials)
+<a href="https://codeclimate.com/github/davide-casiraghi/laravel-testimonials/maintainability"><img src="https://api.codeclimate.com/v1/badges/fb6eef8ed50ad33b8f28/maintainability" /></a>
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 

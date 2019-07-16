@@ -189,8 +189,7 @@ class TestimonialGroupController extends Controller
         $testimonialGroup->translateOrNew('en')->title = $request->get('title');
         $testimonialGroup->quotes_color = $request->get('quotes_color');
         $testimonialGroup->max_characters = $request->get('max_characters');
-        $testimonialGroup->show_title = $request->get('show_title');
-
+        $testimonialGroup->show_title = filter_var($request->show_title, FILTER_VALIDATE_BOOLEAN);
         $testimonialGroup->save();
     }
 }

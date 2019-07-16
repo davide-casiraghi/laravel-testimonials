@@ -87,7 +87,7 @@ class TestimonialGroupController extends Controller
 
         // Set the default language to edit the quote in English
         App::setLocale('en');
-        
+
         $this->saveOnDb($request, $testimonialGroup);
 
         return redirect()->route('testimonialGroups.index')

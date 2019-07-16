@@ -31,13 +31,38 @@
                     
                     {{-- Quotes color --}}
                     <div class="col-12">
-                        @include('laravel-form-partials::input', [
-                            'title' =>  'Quotes color',
-                            'name' => 'quotes_color',
-                            'tooltip' => 'Exadecimal value for the quotes color.',
-                            'placeholder' => '#HEX', 
-                            'value' => old('quotes_color'),
-                            'required' => false,
+                        @include('laravel-form-partials::select', [
+                              'title' => "Quotes color",
+                              'name' => 'quotes_color',
+                              'placeholder' => "choose one...", 
+                              'records' => [
+                                 'red' => 'Red',
+                                 'pink' => 'Pink',
+                                 'purple' => 'Purple',
+                                 'deeppurple' => 'Deep purple',
+                                 'indigo' => 'Indigo',
+                                 'blue' => 'Blue',
+                                 'lightblue' => 'Light blue',
+                                 'cyan' => 'Cyan',
+                                 'teal' => 'Teal',
+                                 'green' => 'Green',
+                                 'lightgreen' => 'Light green',
+                                 'lime' => 'Lime',
+                                 'yellow' => 'Yellow',
+                                 'amber' => 'Amber',
+                                 'orange' => 'Orange',
+                                 'deeporange' => 'Deep orange',
+                                 'brown' => 'Brown',
+                                 'grey' => 'Grey',
+                                 'bluegrey' => 'Blue grey',
+                                 'black' => 'Black',
+                                 'white' => 'White',
+                              ],      
+                              'liveSearch' => 'false',
+                              'mobileNativeMenu' => true,
+                              'selected' => old('quotes_color'),
+                              'required' => false,
+                              'tooltip' => 'Exadecimal value for the quotes color',
                         ])
                     </div>
                     

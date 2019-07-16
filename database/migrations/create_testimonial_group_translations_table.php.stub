@@ -15,7 +15,7 @@ class CreateTestimonialGroupTranslationsTable extends Migration
             $table->string('title')->nullable();
             
             $table->string('locale')->index();
-            $table->unique(['testimonial_group_id', 'locale']);
+            $table->unique(['testimonial_group_id', 'locale'],'tg_id_locale_unique');
             $table->foreign('testimonial_group_id', 'tg_id_foreign')->references('id')->on('testimonial_groups')->onDelete('cascade');
         });
     }

@@ -7,7 +7,6 @@ use DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroup;
 
 class LaravelTestimonials
 {
-    
     /**
      *  Provide the testimonial data array.
      *
@@ -147,9 +146,9 @@ class LaravelTestimonials
         ->with('testimonialGroupParameters', $testimonialGroupParameters)
         ->with('testimonials', $testimonials);
     }
-    
+
     /***************************************************************************/
-    
+
     /**
      * Return an array with the parameters for the testimonial.
      * @param  \DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroup  $testimonialGroup
@@ -157,17 +156,16 @@ class LaravelTestimonials
      */
     public static function getParametersArray($testimonialGroup)
     {
-        
-        if ($testimonialGroup->show_title)
+        if ($testimonialGroup->show_title) {
             $title_style = 'display: block; ';
-        else 
+        } else {
             $title_style = 'display: none; ';
-        
+        }
+
         $ret = [
             'title_style' => $title_style,
         ];
 
         return $ret;
     }
-
 }

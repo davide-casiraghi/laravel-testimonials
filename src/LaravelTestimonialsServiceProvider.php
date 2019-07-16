@@ -50,6 +50,10 @@ class LaravelTestimonialsServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-testimonials'),
             ], 'views');
+            
+            $this->publishes([
+                __DIR__.'/../resources/assets/sass' => resource_path('sass/vendor/laravel-testimonials/'),
+            ], 'sass');
 
             $this->publishes([
                 __DIR__.'/../resources/assets/images' => public_path('vendor/laravel-testimonials/assets/images/'),

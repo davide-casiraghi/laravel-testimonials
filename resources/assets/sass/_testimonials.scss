@@ -1,0 +1,182 @@
+.testimonials{
+    margin: 4rem 3rem 3rem 3rem;
+
+    h2{
+        text-align: center;
+    }
+    .testimonialsList{
+        margin-top: 2rem;
+
+        .slick-list{
+            .slick-track{
+                .slick-slide{
+                    &.testimonial{
+                            display: block;
+                            
+                            /*box-sizing: border-box;
+                            background-image: url(https://wp-test.sencha.com/wp-content/uploads/2018/03/icon-DeveloperQuote.png);
+                            background-repeat: no-repeat;
+                            background-position: top left;
+                            background-size: 115px 110px;
+                            */
+                            min-height: 115px;
+                            /*padding: 0px 20px 0px 140px;*/
+                            margin: 0px 0px 0px 0px;
+                        
+                        img.user-image{
+                            width: 30%;
+                            float: left;
+                            border-radius: 50%;
+                        }
+                        .text{
+                            width: 70%;
+                            float: right;
+
+                            padding: 0 2rem;
+                            box-sizing: border-box;
+
+                            font-style: italic;
+                            position: relative;
+
+                            @media screen and (max-width: 400px) {
+                                padding: 0 1.5rem;
+                            }
+    
+
+                            .start-quote{
+                                position: absolute;
+                                top: 0;
+                                left: -2rem;
+                                height: 1.5rem;
+
+                            }
+                            .end-quote{
+                                display: inline;
+                                width: auto;
+                                height: 0.8em;
+                                margin: 0px 0px 0px 5px;
+                            }
+                            .author{
+                                font-weight: bold;
+                                font-style: normal;
+                                margin-top: 1rem;
+
+                                &.red{
+                                    color: #F44336;
+                                }
+                                &.pink{
+                                    color: #E91E63;
+                                }
+                                &.purple{
+                                    color: #9C27B0;
+                                }
+                                &.deeppurple{
+                                    color: #673AB7;
+                                }
+                                &.indigo{
+                                    color: #3F51B5;
+                                }
+                                &.blue{
+                                    color: #2196F3;
+                                }
+                                &.lightblue{
+                                    color: #03A9F4;
+                                }
+                                &.cyan{
+                                    color: #00BCD4;
+                                }
+                                &.teal{
+                                    color: #009688;
+                                }
+                                &.green{
+                                    color: #4CAF50;
+                                }
+                                &.lightgreen{
+                                    color: #BBC34A;
+                                }
+                                &.lime{
+                                    color: #CDDC39;
+                                }
+                                &.yellow{
+                                    color: #FFEB3B;
+                                }
+                                &.amber{
+                                    color: #FFC107;
+                                }
+                                &.orange{
+                                    color: #FF9800;
+                                }
+                                &.deeporange{
+                                    color: #FF5722;
+                                }
+                                &.brown{
+                                    color: #795548;
+                                }
+                                &.grey{
+                                    color: #9E9E9E;
+                                }
+                                &.bluegrey{
+                                    color: #607D8B;
+                                }
+                                &.black{
+                                    color: #000;
+                                }
+                                &.white{
+                                    color: #FFF;
+                                }
+
+
+
+                            }
+                            /*
+                            .end-quote{
+                                display: inline;
+                                &:after{
+                                    padding-left: 10px;
+                                    content: "\201D";
+                                    font-size: 40px;
+                                    color: gray;
+                                    width: 50px;
+                                    height: 50px;
+                                    font-family: Georgia,serif;
+                                }
+                            }*/
+                            /*.end-quote{
+                                display: inline;
+                                font-family: Georgia,serif;
+                                font-size: 40px;
+                            }*/
+                           
+
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
+
+
+        button{
+            &.slick-arrow{
+                &:before{
+                    color: #7a7a7a;
+                    font-family: Font Awesome\ 5 Pro;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-size: 2rem;
+                }
+            }
+            &.slick-prev{
+                &:before{
+                    content: '\f104';
+                }
+            }
+            &.slick-next{
+                &:before{
+                    content: '\f105';
+                }
+            }    
+        }
+    }
+}

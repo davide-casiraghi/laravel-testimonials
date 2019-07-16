@@ -34,7 +34,7 @@ class TestimonialGroupController extends Controller
 
         if ($searchKeywords) {
             $testimonialGroups = TestimonialGroup::
-                        select('testimonial_group_translations.testimonial_group_id AS id', 'title', 'description', 'button_text', 'background_image', 'button_url', 'locale')
+                        select('testimonial_group_translations.testimonial_group_id AS id', 'title', 'locale')
                         ->join('testimonial_group_translations', 'testimonial_groups.id', '=', 'testimonial_group_translations.testimonial_group_id')
                         ->orderBy('title')
                         ->where('title', 'like', '%'.$searchKeywords.'%')
@@ -42,7 +42,7 @@ class TestimonialGroupController extends Controller
                         ->paginate(20);
         } else {
             $testimonialGroups = TestimonialGroup::
-                        select('testimonial_group_translations.testimonial_group_id AS id', 'title', 'description', 'button_text', 'background_image', 'button_url', 'locale')
+                        select('testimonial_group_translations.testimonial_group_id AS id', 'title', 'locale')
                         ->join('testimonial_group_translations', 'testimonial_groups.id', '=', 'testimonial_group_translations.testimonial_group_id')
                         ->where('locale', 'en')
                         ->orderBy('title')
@@ -192,12 +192,6 @@ class TestimonialGroupController extends Controller
         $testimonialGroup->quotes_color = $request->get('quotes_color');
         $testimonialGroup->max_characters = $request->get('max_characters');
         $testimonialGroup->show_title = $request->get('show_title');
-
-        // Testimonial group image upload
-        $imageSubdir = 'testimonial_groups';
-        $imageWidth = '1067';
-        $thumbWidth = '690';
-        $testimonialGroup->background_image = LaravelFormPartials::uploadImageOnServer($request->file('background_image'), $request->background_image, $imageSubdir, $imageWidth, $thumbWidth);
 
         $testimonialGroup->save();
     }

@@ -37,9 +37,9 @@ class TestimonialGroupControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
 
-        $this->get('testimonialGroups/create')->dump();
-            //->assertViewIs('laravel-testimonials::testimonialGroups.create')
-            //->assertStatus(200);
+        $this->get('testimonialGroups/create')
+            ->assertViewIs('laravel-testimonials::testimonialGroups.create')
+            ->assertStatus(200);
     }
 
     /** @test */
@@ -49,40 +49,16 @@ class TestimonialGroupControllerTest extends TestCase
 
         $data = [
             'title' => 'test title',
-            'description' => 'test description',
-            'button_text' => 'test button text',
-            'image_alt' => 'test image alt',
-            'bkg_color' => '#2365AA',
-            'group_title_color' => '#2365AA',
-            'group_title_font_size' => '2rem',
-            'testimonial_title_color' => '#2365AA',
-            'testimonial_title_font_size' => '2rem',
-            'description_font_size' => '2rem',
-            'link_style' => 2,
-            'button_url' => 'http://www.google.it',
-            'button_color' => '#2365AA',
-            'button_corners' => '2rem',
-            'background_type' => '2rem',
-            'opacity' => '2rem',
-            'background_image' => 'test_bkg_image.jpg',
-            'background_image_position' => 2,
-            'justify_content' => '2rem',
-            'flex_wrap' => '2rem',
-            'flex_flow' => '2rem',
-            'testimonials_flex' => '2rem',
-            'testimonials_padding' => '10px',
-            'testimonials_box_sizing' => '2rem',
-            'testimonials_round_images' => 1,
-            'testimonials_images_width' => '200px',
-            'testimonials_images_hide_mobile' => 0,
-            'icons_size' => '100px',
+            'quotes_color' => '#2365AA',
+            'max_characters' => '60',
+            'show_title' => 1,
         ];
 
         $response = $this
             ->followingRedirects()
             ->post('/testimonialGroups', $data);
 
-        $this->assertDatabaseHas('testimonial_groups', ['background_image' => 'test_bkg_image.jpg']);
+        $this->assertDatabaseHas('testimonial_groups', ['max_characters' => '60']);
         $response->assertViewIs('laravel-testimonials::testimonialGroups.index');
     }
 

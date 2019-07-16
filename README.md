@@ -8,7 +8,7 @@
 <a href="https://codeclimate.com/github/davide-casiraghi/laravel-testimonials/maintainability"><img src="https://api.codeclimate.com/v1/badges/fb6eef8ed50ad33b8f28/maintainability" /></a>
 [![GitHub last commit](https://img.shields.io/github/last-commit/davide-casiraghi/laravel-testimonials.svg)](https://github.com/davide-casiraghi/laravel-testimonials) 
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+A Laravel package to show testimonials trough a carousel. The contents support multi language.
 
 ## Installation
 

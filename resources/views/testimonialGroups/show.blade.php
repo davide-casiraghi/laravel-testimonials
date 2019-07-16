@@ -4,8 +4,8 @@
 
     @include('laravel-testimonials::show-testimonial-group', [
             'testimonials' => $testimonials,
-             'testimonialGroup' => $testimonialGroup,
-             'testimonialGroupParameters' => $testimonialGroupParameters,
+            'testimonialGroup' => $testimonialGroup,
+            'testimonialGroupParameters' => $testimonialGroupParameters,
        ])
        
 @endsection

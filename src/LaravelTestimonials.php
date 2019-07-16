@@ -157,7 +157,6 @@ class LaravelTestimonials
      */
     public static function getParametersArray($testimonialGroup)
     {
-        $quotes_style = 'color:'.$testimonialGroup->quotes_color.'; ';
         
         if ($testimonialGroup->show_title)
             $title_style = 'display: block; ';
@@ -165,7 +164,6 @@ class LaravelTestimonials
             $title_style = 'display: none; ';
         
         $ret = [
-            'quotes_style' => $quotes_style,
             'title_style' => $title_style,
         ];
 

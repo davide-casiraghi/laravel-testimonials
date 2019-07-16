@@ -72,7 +72,7 @@ class TestimonialGroupControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_displays_the_testimonial_group_show_page()
+    public function it_displays_the_testimonial_group_show_page()
     {
         $this->authenticate();
 
@@ -80,7 +80,7 @@ class TestimonialGroupControllerTest extends TestCase
         $response = $this->get('/testimonialGroups/'.$testimonialGroup->id);
         $response->assertViewIs('laravel-testimonials::testimonialGroups.show')
                  ->assertStatus(200);
-    }*/
+    }
 
     /** @test */
     public function it_displays_the_testimonial_group_edit_page()

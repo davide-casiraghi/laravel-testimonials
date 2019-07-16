@@ -2,6 +2,16 @@
 
     Route::group(['namespace' => 'DavideCasiraghi\LaravelTestimonials\Http\Controllers', 'middleware' => 'web'], function () {
 
+        /* Testimonial Groups */
+        Route::resource('testimonialGroups', 'TestimonialGroupController');
+
+        /* Testimonial Group translations */
+        Route::get('testimonialGroupTranslations/{testimonialGroupId}/{languageCode}/create', 'TestimonialGroupTranslationController@create')->name('testimonialGroupTranslations.create');
+        Route::get('testimonialGroupTranslations/{testimonialGroupId}/{languageCode}/edit', 'TestimonialGroupTranslationController@edit')->name('testimonialGroupTranslations.edit');
+        Route::post('/testimonialGroupTranslations/store', 'TestimonialGroupTranslationController@store')->name('testimonialGroupTranslations.store');
+        Route::put('/testimonialGroupTranslations/update', 'TestimonialGroupTranslationController@update')->name('testimonialGroupTranslations.update');
+        Route::delete('/testimonialGroupTranslations/destroy/{testimonialGroupTranslationId}', 'TestimonialGroupTranslationController@destroy')->name('testimonialGroupTranslations.destroy');
+
         /* Testimonials */
         Route::resource('testimonials', 'TestimonialController');
 

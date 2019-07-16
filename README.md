@@ -18,6 +18,12 @@ You can install the package via composer:
 composer require davide-casiraghi/laravel-testimonials
 ```
 
+### Install also slick carousel
+
+```bash
+npm install slick-carousel
+```
+
 ## Usage
 
 ``` php

@@ -1,7 +1,4 @@
 
-
-
-
 @if ($testimonialGroup)
     
     <div class='testimonials py-4 px-2'>
@@ -9,12 +6,10 @@
         <h3 class='mb-4'>{{$testimonialGroup['title']}}</h3>
     
         <div class='testimonialsList'>
-        
-            {{-- Testimonials --}}
     		@foreach ($testimonials as $key => $testimonial)
                 
-                <aside class='testimonial'>
-                    
+                <div class='testimonial'>
+                
                     {{-- Image --}}
                     @if ($testimonial->image_file_name)
                         <img class='user-image' src='/storage/images/testimonials/{{$testimonial->image_file_name}}'/>
@@ -33,17 +28,11 @@
 		    			{{$testimonial->author}}
                         @if($testimonial->profession), {{$testimonial->profession}} @endif
 	    			</div>
-                    
-                
-                </aside>    
-                
+        
+                </div>        
             @endforeach	
-            
-        </div>              
-                        
-
+        </div>                  
     </div>
-    
 @else
     <div class='alert alert-warning' role='alert'>The testimonial group with the specified id has not been found.</div>
 @endif

@@ -37,7 +37,7 @@ class TestimonialGroupTranslationController extends Controller
      */
     public function edit($testimonialGroupId, $languageCode)
     {
-        $testimonialGroupTranslation = TestimonialGroupTranslation::where('t_group_id', $testimonialGroupId)
+        $testimonialGroupTranslation = TestimonialGroupTranslation::where('testimonial_group_id', $testimonialGroupId)
                         ->where('locale', $languageCode)
                         ->first();
 
@@ -118,7 +118,7 @@ class TestimonialGroupTranslationController extends Controller
 
         switch ($saveOrUpdate) {
             case 'save':
-                $testimonialGroupTranslation->t_group_id = $request->get('t_group_id');
+                $testimonialGroupTranslation->testimonial_group_id = $request->get('testimonial_group_id');
                 $testimonialGroupTranslation->locale = $request->get('language_code');
                 $testimonialGroupTranslation->save();
                 break;

@@ -15,7 +15,7 @@ use Faker\Generator as Faker;
 $factory->define(DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroupTranslation::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-        't_group_id' => 1,
+        'testimonial_group_id' => 1,
         'locale' => 'en',
     ];
 });

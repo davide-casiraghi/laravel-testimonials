@@ -30,7 +30,7 @@ class TestimonialGroupTranslationControllerTest extends TestCase
         $testimonialGroup = factory(TestimonialGroup::class)->create();
 
         $data = [
-            't_group_id' => $testimonialGroup->id,
+            'testimonial_group_id' => $testimonialGroup->id,
             'language_code' => 'es',
             'title' => 'Spanish testimonial group title',
         ];
@@ -61,7 +61,7 @@ class TestimonialGroupTranslationControllerTest extends TestCase
         $testimonialGroup = factory(TestimonialGroup::class)->create();
 
         $data = [
-            't_group_id' => $testimonialGroup->id,
+            'testimonial_group_id' => $testimonialGroup->id,
             'language_code' => 'es',
             'title' => 'Spanish testimonial group title',
         ];
@@ -82,7 +82,7 @@ class TestimonialGroupTranslationControllerTest extends TestCase
                         ]);
 
         $data = [
-            't_group_id' => $testimonialGroup->id,
+            'testimonial_group_id' => $testimonialGroup->id,
             'language_code' => 'es',
             'title' => 'Spanish testimonial group title',
         ];
@@ -109,7 +109,7 @@ class TestimonialGroupTranslationControllerTest extends TestCase
         $testimonialGroup = factory(TestimonialGroup::class)->create();
 
         $data = [
-            't_group_id' => $testimonialGroup->id,
+            'testimonial_group_id' => $testimonialGroup->id,
             'language_code' => 'es',
             'title' => 'Spanish testimonial group title',
         ];
@@ -134,7 +134,7 @@ class TestimonialGroupTranslationControllerTest extends TestCase
         $testimonialGroup = factory(TestimonialGroup::class)->create();
 
         $data = [
-            't_group_id' => $testimonialGroup->id,
+            'testimonial_group_id' => $testimonialGroup->id,
             'language_code' => 'es',
             'title' => 'Spanish testimonial group title',
         ];

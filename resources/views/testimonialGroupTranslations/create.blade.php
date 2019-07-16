@@ -19,7 +19,7 @@
         @csrf
 
             @include('laravel-form-partials::input-hidden', [
-                  'name' => 't_group_id',
+                  'name' => 'testimonial_group_id',
                   'value' => $testimonialGroupId,
             ])
             @include('laravel-form-partials::input-hidden', [

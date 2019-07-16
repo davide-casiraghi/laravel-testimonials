@@ -32,16 +32,16 @@ class TestimonialGroupController extends Controller
 
         if ($searchKeywords) {
             $testimonialGroups = TestimonialGroup::
-                        select('testimonial_group_translations.t_group_id AS id', 'title', 'locale')
-                        ->join('testimonial_group_translations', 'testimonial_groups.id', '=', 'testimonial_group_translations.t_group_id')
+                        select('testimonial_group_translations.testimonial_group_id AS id', 'title', 'locale')
+                        ->join('testimonial_group_translations', 'testimonial_groups.id', '=', 'testimonial_group_translations.testimonial_group_id')
                         ->orderBy('title')
                         ->where('title', 'like', '%'.$searchKeywords.'%')
                         ->where('locale', 'en')
                         ->paginate(20);
         } else {
             $testimonialGroups = TestimonialGroup::
-                        select('testimonial_group_translations.t_group_id AS id', 'title', 'locale')
-                        ->join('testimonial_group_translations', 'testimonial_groups.id', '=', 'testimonial_group_translations.t_group_id')
+                        select('testimonial_group_translations.testimonial_group_id AS id', 'title', 'locale')
+                        ->join('testimonial_group_translations', 'testimonial_groups.id', '=', 'testimonial_group_translations.testimonial_group_id')
                         ->where('locale', 'en')
                         ->orderBy('title')
                         ->paginate(20);
@@ -87,7 +87,7 @@ class TestimonialGroupController extends Controller
 
         // Set the default language to edit the quote in English
         App::setLocale('en');
-
+        
         $this->saveOnDb($request, $testimonialGroup);
 
         return redirect()->route('testimonialGroups.index')

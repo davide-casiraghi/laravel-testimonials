@@ -61,7 +61,7 @@ class TestimonialTranslationController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'title' => 'required',
+                'name' => 'required',
             ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
@@ -88,7 +88,7 @@ class TestimonialTranslationController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'title' => 'required',
+                'name' => 'required',
             ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
@@ -117,9 +117,9 @@ class TestimonialTranslationController extends Controller
     public function saveOnDb($request, $testimonialTranslation, $saveOrUpdate)
     {
         //dd($testimonialTranslation);
-        $testimonialTranslation->title = $request->get('title');
+        $testimonialTranslation->name = $request->get('name');
         $testimonialTranslation->body = $request->get('body');
-        $testimonialTranslation->button_text = $request->get('button_text');
+        $testimonialTranslation->profession = $request->get('profession');
 
         switch ($saveOrUpdate) {
             case 'save':

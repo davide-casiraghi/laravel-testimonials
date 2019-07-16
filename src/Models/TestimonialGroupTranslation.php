@@ -10,7 +10,7 @@ class TestimonialGroupTranslation extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        'testimonial_group_id',
+        't_group_id',
         'title',
         'locale',
     ];

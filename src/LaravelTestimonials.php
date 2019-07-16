@@ -62,7 +62,7 @@ class LaravelTestimonials
     {
         $re = '/{\#
             \h+testimonial_group
-            \h+(testimonial_group_id)=\[([^]]*)]
+            \h+(t_group_id)=\[([^]]*)]
             \h*\#}/x';
 
         if (preg_match_all($re, $text, $matches, PREG_SET_ORDER, 0)) {
@@ -88,7 +88,7 @@ class LaravelTestimonials
         $ret['token'] = $matches[0];
         //dump($matches);
 
-        $ret['testimonial_group_id'] = $matches[2];
+        $ret['t_group_id'] = $matches[2];
 
         return $ret;
     }
@@ -111,7 +111,7 @@ class LaravelTestimonials
             foreach ($matches as $key => $single_gallery_matches) {
                 $snippetParameters = self::getSnippetParameters($single_gallery_matches);
 
-                $testimonialGroupId = $snippetParameters['testimonial_group_id'];
+                $testimonialGroupId = $snippetParameters['t_group_id'];
 
                 $testimonialGroup = self::getTestimonialGroup($testimonialGroupId);
                 $testimonialGroupParameters = ($testimonialGroup) ? (self::getParametersArray($testimonialGroup)) : null;

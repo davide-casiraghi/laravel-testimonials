@@ -33,7 +33,11 @@ npm install slick-carousel
 ### Import the scss files
 Add this line to your **resources/sass/app.scss** file:  
 
-```@import 'vendor/laravel-testimonials/testimonials';```   
+```
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
+@import 'vendor/laravel-testimonials/testimonials';
+```   
 
 and then run in console:  
 ```npm run dev```  

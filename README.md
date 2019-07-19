@@ -18,6 +18,37 @@ You can install the package via composer:
 composer require davide-casiraghi/laravel-testimonials
 ```
 
+### Publish all the vendor files
+```php artisan vendor:publish --force```
+
+### Run the database migrations
+```php artisan migrate```
+
+### Install also slick carousel
+
+```bash
+npm install slick-carousel
+```
+
+### Import the scss files
+Add this line to your **resources/sass/app.scss** file:  
+
+```
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
+@import 'vendor/laravel-testimonials/testimonials';
+```   
+
+and then run in console:  
+```npm run dev```  
+
+### Import the js files
+Add this line to your **resources/js/app.js** file:  
+``` 
+require('./vendor/laravel-testimonials/testimonials');   
+import 'slick-carousel';    
+```
+
 ## Usage
 
 ``` php
@@ -27,7 +58,7 @@ composer require davide-casiraghi/laravel-testimonials
 ### Testing
 
 ``` bash
-composer test
+./vendor/bin/phpunit --coverage-html=html
 ```
 
 ### Changelog

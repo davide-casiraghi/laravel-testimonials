@@ -3,7 +3,7 @@
     
     <div class='testimonials py-4 px-2'>
         
-        <h3 class='mb-4' style='{{$testimonialGroupParameters['title_style']}}'>{{$testimonialGroup['title']}}</h3>
+        <h3 class='mb-4' style='{{$testimonialGroupParameters['title_style']}}'>{{$testimonialGroup->title}}</h3>
     
         <div class='testimonialsList'>
     		@foreach ($testimonials as $key => $testimonial)
@@ -20,9 +20,14 @@
                     {{-- Text --}}
                     <div class="text">
                         <img class="start-quote" src="/vendor/laravel-testimonials/assets/images/start-quote-{{$testimonialGroup->quotes_color}}.png" alt="Start Quote">
-                        {{$testimonial->body}}
+                            {{ str_limit($testimonial->body, $limit = $testimonialGroup->max_characters, $end = '...') }}
                         <img class="end-quote" src="/vendor/laravel-testimonials/assets/images/end-quote-{{$testimonialGroup->quotes_color}}.png" alt="End Quote">
-                            
+                        
+                        {{-- Read more --}}    
+                        @if(strlen($testimonial->body) > $testimonialGroup->max_character)
+                            <br>
+                            <a href="#">Read more</a>
+                        @endif
                         {{-- Author --}}
                         <div class='author {{$testimonialGroup->quotes_color}}'>
     		    			{{$testimonial->name}}

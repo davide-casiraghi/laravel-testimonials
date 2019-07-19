@@ -7,5 +7,5 @@ return [
     'edit' => 'Edit',
     'delete' => 'Delete',
     'back' => 'Back',
-    'read_more' => 'Read more',
+    'read_more' => 'Lee mas',
 ];

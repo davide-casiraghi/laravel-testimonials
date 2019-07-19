@@ -6,4 +6,6 @@ return [
     'view' => 'Ansicht',
     'edit' => 'Editieren',
     'delete' => 'Löschen',
+    'back' => 'Zurück',
+    'read_more' => 'Weiterlesen',
 ];

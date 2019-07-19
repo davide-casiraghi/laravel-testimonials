@@ -8,6 +8,5 @@ return [
     'delete' => 'Usuń',
     'back' => 'Wróć',
     'read_more' => 'Czytaj więcej',
-    
-    
+
 ];

@@ -44,7 +44,7 @@ and then run in console:
 
 ### Import the js files
 Add this line to your **resources/js/app.js** file:  
-``` require('./vendor/laravel-testimonials/testimonials'); ```
+``` require('./vendor/laravel-testimonials/testimonials'); ```   
 ``` import 'slick-carousel'; ```
 
 ## Usage

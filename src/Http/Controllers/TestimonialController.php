@@ -198,8 +198,8 @@ class TestimonialController extends Controller
 
         // Testimonial image upload
         $imageSubdir = 'testimonials';
-        $imageWidth = '1067';
-        $thumbWidth = '690';
+        $imageWidth = '300';
+        $thumbWidth = '300';
         $testimonial->image_file_name = LaravelFormPartials::uploadImageOnServer($request->file('image_file_name'), $request->image_file_name, $imageSubdir, $imageWidth, $thumbWidth);
 
         $testimonial->save();

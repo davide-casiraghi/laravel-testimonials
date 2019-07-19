@@ -3,7 +3,7 @@
     
     <div class='testimonials py-4 px-2'>
         
-        <h3 class='mb-4'>{{$testimonialGroup['title']}}</h3>
+        <h3 class='mb-4' style='{{$testimonialGroupParameters['title_style']}}'>{{$testimonialGroup['title']}}</h3>
     
         <div class='testimonialsList'>
     		@foreach ($testimonials as $key => $testimonial)
@@ -18,16 +18,20 @@
                     @endif
                     
                     {{-- Text --}}
-                    <h4 style='{{$testimonialGroupParameters['title_style']}}'>{{$testimonial->title}}</h4>
-                    <img class='start-quote' src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=' data-src='/vendor/laravel-testimonials/assets/images/start-quote-{{$testimonialGroup->quotes_color}}.png' alt='Start Quote'>
-                    <p>{{$testimonial->body}}</p> 
-					<img class='end-quote' src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=' data-src='/vendor/laravel-testimonials/assets/images/end-quote-{{$testimonialGroup->quotes_color}}.png' alt='End Quote'>		
+                    <div class="text">
+                        <img class="start-quote" src="/vendor/laravel-testimonials/assets/images/start-quote-{{$testimonialGroup->quotes_color}}.png" alt="Start Quote">
+                        {{$testimonial->body}}
+                        <img class="end-quote" src="/vendor/laravel-testimonials/assets/images/end-quote-{{$testimonialGroup->quotes_color}}.png" alt="End Quote">
+                            
+                        {{-- Author --}}
+                        <div class='author {{$testimonialGroup->quotes_color}}'>
+    		    			{{$testimonial->name}}
+                            @if($testimonial->profession), {{$testimonial->profession}} @endif
+    	    			</div>
+                    </div> 
+							
                 
-                    {{-- Author --}}
-                    <div class='author {{$testimonialGroup->quotes_color}}'>
-		    			{{$testimonial->author}}
-                        @if($testimonial->profession), {{$testimonial->profession}} @endif
-	    			</div>
+                    
         
                 </div>        
             @endforeach	

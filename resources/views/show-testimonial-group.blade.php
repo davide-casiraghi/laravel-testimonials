@@ -26,7 +26,7 @@
                         {{-- Read more --}}    
                         @if(strlen($testimonial->body) > $testimonialGroup->max_character)
                             <br>
-                            <a href="{{ route('testimonials.show',$testimonial->id) }}">Read more</a>
+                            <a href="{{ route('testimonials.show',$testimonial->id) }}">@lang('laravel-testimonials::general.read_more')</a>
                         @endif
                         {{-- Author --}}
                         <div class='author {{$testimonialGroup->quotes_color}}'>

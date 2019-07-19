@@ -10,6 +10,9 @@
         <div class="row">
             <div class="col-12 col-sm-8">
                 {{$testimonial->body}}
+                {{-- Back --}}
+                <br>
+                <a href="{{ url()->previous() }}" class="btn btn-primary mt-4">@lang('laravel-testimonials::general.back')</a>
             </div>
             <div class="col-12 col-sm-4 mt-3 mt-sm-0">
                 @if(!empty($testimonial->image_file_name))
@@ -18,8 +21,7 @@
             </div>
         </div>
         
-        {{-- Back --}}
-        <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+        
         
     @else
         <div class="alert alert-warning" role="alert">

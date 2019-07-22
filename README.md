@@ -51,9 +51,37 @@ import 'slick-carousel';
 
 ## Usage
 
+### Authorization
+> To work the package aspect that in your user model and table you have a field called **group** that can have this possible values:
+- null: Registered user 
+- 1: Super Admin
+- 2: Admin
+
+> Just the users that have **Admin** and **Super admin** privileges can access to the routes that allow to create, edit and delete the blogs, categories and posts. Otherwise you get redirected to the homepage.
+
+### Access to the package
+After the package is published this new routes will be available:
+- /testimonialGroups
+- /testimonials
+
+Accessing to this routes you can manage new testimonial groups and testimonials.
+
+### Replace the snippet occurrances
+
+Add the replace funcion to your code in the show() funcion of the controller.
+
 ``` php
-// Usage description here
+use DavideCasiraghi\LaravelTestimonials\Facades\LaravelTestimonials;  
+
+$text = LaravelTestimonials::replace_testimonial_group_snippets_with_template($text);
 ```
+
+### Use the code snippet in your posts   
+Then the library will replace all the occurances of this snippet:   
+
+```{# testimonial_group testimonial_group_id=[1] #} ```   
+
+with the some HTML code of the relative testimonial group. This code uses bootstrap 4.
 
 ### Testing
 

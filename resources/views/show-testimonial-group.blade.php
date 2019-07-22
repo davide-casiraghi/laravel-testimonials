@@ -14,7 +14,12 @@
                     @if ($testimonial->image_file_name)
                         <img class='user-image' src='/storage/images/testimonials/{{$testimonial->image_file_name}}'/>
                     @else
-                        <img class='user-image' src='/vendor/laravel-testimonials/assets/images/circle_male_user.png'/>
+                        @if ($testimonial->gender == 'm')
+                            <img class='user-image' src='/vendor/laravel-testimonials/assets/images/circle_male_user.png'/>    
+                        @else
+                            <img class='user-image' src='/vendor/laravel-testimonials/assets/images/circle_female_user.png'/>
+                        @endif
+                        
                     @endif
                     
                     {{-- Text --}}

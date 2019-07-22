@@ -64,7 +64,7 @@ After the package is published this new routes will be available:
 - /testimonialGroups
 - /testimonials
 
-Accessing to this routes you can manage new column groups and columns.
+Accessing to this routes you can manage new testimonial groups and testimonials.
 
 ### Replace the snippet occurrances
 

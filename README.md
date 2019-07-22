@@ -68,13 +68,20 @@ Accessing to this routes you can manage new column groups and columns.
 
 ### Replace the snippet occurrances
 
-Then to replace all the occurrance of the column group snippets:
+Add the replace funcion to your code in the show() funcion of the controller.
 
 ``` php
 use DavideCasiraghi\LaravelTestimonials\Facades\LaravelTestimonials;  
 
 $text = LaravelTestimonials::replace_testimonial_group_snippets_with_template($text);
 ```
+
+### Use the code snippet in your posts   
+Then the library will replace all the occurances of this snippet:   
+
+```{# testimonial_group testimonial_group_id=[1] #} ```   
+
+with the some HTML code of the relative testimonial group. This code uses bootstrap 4.
 
 ### Testing
 

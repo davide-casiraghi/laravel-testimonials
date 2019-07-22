@@ -18,8 +18,20 @@
                 
                 <div class="row">
                     
+                    {{-- Group Title  --}}
                     <div class="col-12">
-                        <h4 class="my-3">General options</h4>
+                        @include('laravel-form-partials::input', [
+                            'title' => 'Title',
+                            'name' => 'title',
+                            'placeholder' => '', 
+                            'value' => old('title'),
+                            'required' => true,
+                        ])
+                    </div>
+                    
+                    <div class="col-12">
+                        <hr>
+                        <h4 class="my-4">General options</h4>
                     </div>
                     
                     {{-- Quotes color --}}
@@ -73,25 +85,14 @@
                     
                     <div class="col-12">
                         <hr>
-                        <h4 class="my-3">Title options</h4>
+                        <h4 class="my-4">Group Title options</h4>
                     </div> 
-                    
-                    {{-- Group Title  --}}
-                    <div class="col-12">
-                        @include('laravel-form-partials::input', [
-                            'title' => 'Title',
-                            'name' => 'title',
-                            'placeholder' => '', 
-                            'value' => old('title'),
-                            'required' => true,
-                        ])
-                    </div>
                     
                     {{-- Show title --}}
                     <div class="col-12">
                         @include('laravel-form-partials::checkbox', [
                               'name' => 'show_title',
-                              'description' => 'Show title',
+                              'description' => 'Show group title',
                               'value' => old('show_title'),
                               'required' => false,
                         ])

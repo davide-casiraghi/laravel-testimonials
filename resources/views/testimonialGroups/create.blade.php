@@ -5,7 +5,7 @@
     <div class="container mb-4">
             <div class="row mb-4">
                 <div class="col-12">
-                    <h4>Add new testimonial group</h4>
+                    <h3>Add new testimonial group</h3>
                 </div>
             </div>
 
@@ -18,15 +18,8 @@
                 
                 <div class="row">
                     
-                    {{-- Group Title  --}}
                     <div class="col-12">
-                        @include('laravel-form-partials::input', [
-                            'title' => 'Title',
-                            'name' => 'title',
-                            'placeholder' => '', 
-                            'value' => old('title'),
-                            'required' => true,
-                        ])
+                        <h4 class="my-3">General options</h4>
                     </div>
                     
                     {{-- Quotes color --}}
@@ -78,13 +71,48 @@
                         ])
                     </div>
                     
-                    {{-- Round images --}}
+                    <div class="col-12">
+                        <hr>
+                        <h4 class="my-3">Title options</h4>
+                    </div> 
+                    
+                    {{-- Group Title  --}}
+                    <div class="col-12">
+                        @include('laravel-form-partials::input', [
+                            'title' => 'Title',
+                            'name' => 'title',
+                            'placeholder' => '', 
+                            'value' => old('title'),
+                            'required' => true,
+                        ])
+                    </div>
+                    
+                    {{-- Show title --}}
                     <div class="col-12">
                         @include('laravel-form-partials::checkbox', [
                               'name' => 'show_title',
                               'description' => 'Show title',
                               'value' => old('show_title'),
                               'required' => false,
+                        ])
+                    </div>
+                    
+                    {{-- Title alignment --}}
+                    <div class="col-12">
+                        @include('laravel-form-partials::select', [
+                              'title' => "Alignment",
+                              'name' => 'title_alignment',
+                              'placeholder' => "choose one...", 
+                              'records' => [
+                                 'left' => 'Left',
+                                 'center' => 'Center',
+                                 'right' => 'Right',
+                              ],      
+                              'liveSearch' => 'false',
+                              'mobileNativeMenu' => true,
+                              'selected' => old('title_alignment'),
+                              'required' => false,
+                              'tooltip' => '',
                         ])
                     </div>
                                         

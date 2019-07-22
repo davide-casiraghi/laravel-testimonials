@@ -190,6 +190,8 @@ class TestimonialGroupController extends Controller
         $testimonialGroup->quotes_color = $request->get('quotes_color');
         $testimonialGroup->max_characters = $request->get('max_characters');
         $testimonialGroup->show_title = filter_var($request->show_title, FILTER_VALIDATE_BOOLEAN);
+        $testimonialGroup->title_alignment = $request->get('title_alignment');
+        
         $testimonialGroup->save();
     }
 }

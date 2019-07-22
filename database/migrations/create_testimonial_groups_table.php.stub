@@ -11,6 +11,7 @@ class CreateTestimonialGroupsTable extends Migration
         Schema::create('testimonial_groups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('quotes_color')->nullable();
+            $table->string('title_alignment')->nullable();
             $table->integer('max_characters')->nullable();
             $table->boolean('show_title')->default(0)->nullable();
             

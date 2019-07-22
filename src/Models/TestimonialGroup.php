@@ -16,5 +16,6 @@ class TestimonialGroup extends Model
         'quotes_color',
         'max_characters',
         'show_title',
+        'title_alignment',
     ];
 }

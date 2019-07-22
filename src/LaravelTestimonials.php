@@ -53,7 +53,8 @@ class LaravelTestimonials
     /**************************************************************************/
 
     /**
-     *  Find the testimonial snippet occurances in the text.
+     *  Find the testimonial snippet occurances in the text. 
+     *  eg. {# testimonial_group testimonial_group_id=[1] #}
      *
      *  @param string $text
      *  @return array $matches

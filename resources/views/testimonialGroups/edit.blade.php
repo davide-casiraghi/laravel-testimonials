@@ -17,6 +17,17 @@
                 @csrf
                 @method('PUT')
                     
+                    <div class="col-12">
+                        @include('laravel-form-partials::input-readonly', [
+                            'title' => 'To show this testimonial group use this snippet',
+                            'name' => 'snippet',
+                            'placeholder' => '', 
+                            'value' => ' {# testimonial_group testimonial_group_id=[{!!$testimonialGroup->id!!}] #}',
+                            'required' => false,
+                        ])
+                    </div>
+                    
+                    
                     {{-- Group Title  --}}
                     <div class="col-12">
                         @include('laravel-form-partials::input', [

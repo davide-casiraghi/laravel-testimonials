@@ -21,33 +21,6 @@
     {{-- List all the quotes --}}
     <div class="quotesList my-4">
         
-        {{--
-        @foreach ($testimonials as $testimonial)
-            <div class="row bg-white shadow-1 rounded mb-3 pb-2 pt-3 mx-1">
-                
-                <div class="col-12 py-1">
-                    <h5>{{ $testimonial->author }}</h5>
-                    <div class="">
-                        {{ $testimonial->text }}
-                    </div>
-                </div>
-                
-                <div class="col-12 pb-2">
-                    <form action="{{ route('testimonials.destroy',$testimonial->id) }}" method="POST">
-                        <a class="btn btn-primary float-right" href="{{ route('testimonials.edit',$testimonial->id) }}">Edit</a>
-                        
-                        @csrf
-                        @method('DELETE')
-
-                        <button type="submit" class="btn btn-link pl-0">Delete</button>
-                    </form>
-                </div>
-                
-            </div>
-        @endforeach
-        --}}
-        
-        
         @foreach ($testimonialGroups as $testimonialGroup)
                 <div class="row bg-white shadow-1 rounded mb-3 mx-1">
                     

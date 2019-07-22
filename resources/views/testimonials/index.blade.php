@@ -18,7 +18,7 @@
     @endif
     
     
-    {{-- List all the quotes --}}
+    {{-- List all the testimonials --}}
     <div class="testimonialsList my-4">
             
         @foreach ($testimonials as $testimonial)

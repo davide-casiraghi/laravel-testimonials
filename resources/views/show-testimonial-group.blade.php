@@ -3,7 +3,7 @@
     
     <div class='testimonials py-4 px-2'>
         
-        <h3 class='mb-4' style='{{$testimonialGroupParameters['title_style']}}'>{{$testimonialGroup->title}}</h3>
+        <h3 class='mb-5 text-{{$testimonialGroup->title_alignment}}' style='{{$testimonialGroupParameters['title_style']}}'>{{$testimonialGroup->title}}</h3>
     
         <div class='testimonialsList'>
     		@foreach ($testimonials as $key => $testimonial)
@@ -18,8 +18,7 @@
                             <img class='user-image' src='/vendor/laravel-testimonials/assets/images/circle_male_user.png'/>    
                         @else
                             <img class='user-image' src='/vendor/laravel-testimonials/assets/images/circle_female_user.png'/>
-                        @endif
-                        
+                        @endif    
                     @endif
                     
                     {{-- Text --}}

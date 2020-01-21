@@ -2,15 +2,15 @@
 
 namespace DavideCasiraghi\LaravelTestimonials\Http\Controllers;
 
-use Validator;
+use DavideCasiraghi\LaravelFormPartials\Facades\LaravelFormPartials;
+use DavideCasiraghi\LaravelTestimonials\Facades\LaravelTestimonials;
+use DavideCasiraghi\LaravelTestimonials\Models\Testimonial;
+use DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Intervention\Image\ImageManagerStatic as Image;
-use DavideCasiraghi\LaravelTestimonials\Models\Testimonial;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroup;
-use DavideCasiraghi\LaravelFormPartials\Facades\LaravelFormPartials;
-use DavideCasiraghi\LaravelTestimonials\Facades\LaravelTestimonials;
+use Validator;
 
 class TestimonialController extends Controller
 {
@@ -80,8 +80,8 @@ class TestimonialController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'name' => 'required',
-            ]);
+            'name' => 'required',
+        ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
@@ -144,8 +144,8 @@ class TestimonialController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'name' => 'required',
-            ]);
+            'name' => 'required',
+        ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }

@@ -2,9 +2,9 @@
 
 namespace DavideCasiraghi\LaravelTestimonials\Http\Controllers;
 
-use Validator;
-use Illuminate\Http\Request;
 use DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroupTranslation;
+use Illuminate\Http\Request;
+use Validator;
 
 class TestimonialGroupTranslationController extends Controller
 {
@@ -61,8 +61,8 @@ class TestimonialGroupTranslationController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'title' => 'required',
-            ]);
+            'title' => 'required',
+        ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
@@ -88,8 +88,8 @@ class TestimonialGroupTranslationController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'title' => 'required',
-            ]);
+            'title' => 'required',
+        ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }

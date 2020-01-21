@@ -2,8 +2,8 @@
 
 namespace DavideCasiraghi\LaravelTestimonials\Tests;
 
-use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelTestimonials\Models\Testimonial;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class TestimonialControllerTest extends TestCase
 {
@@ -15,12 +15,12 @@ class TestimonialControllerTest extends TestCase
     public function it_runs_the_test_testimonial_factory()
     {
         $testimonial = factory(Testimonial::class)->create([
-                            'name' => 'test name',
-                        ]);
+            'name' => 'test name',
+        ]);
         $this->assertDatabaseHas('testimonial_translations', [
-                                'locale' => 'en',
-                                'name' => 'test name',
-                ]);
+            'locale' => 'en',
+            'name' => 'test name',
+        ]);
     }
 
     /** @test */
@@ -107,7 +107,7 @@ class TestimonialControllerTest extends TestCase
             'name' => 'test title updated',
             'body' => 'test body updated',
             'profession' => 'test profession',
-          ]);
+        ]);
 
         $response = $this->followingRedirects()
                          ->put('/testimonials/'.$testimonial->id, $attributes);

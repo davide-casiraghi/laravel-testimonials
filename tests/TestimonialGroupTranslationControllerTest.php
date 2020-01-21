@@ -2,8 +2,8 @@
 
 namespace DavideCasiraghi\LaravelTestimonials\Tests;
 
-use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroup;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class TestimonialGroupTranslationControllerTest extends TestCase
 {
@@ -78,8 +78,8 @@ class TestimonialGroupTranslationControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $testimonialGroup = factory(TestimonialGroup::class)->create([
-                            'title' => 'Testimonial 1',
-                        ]);
+            'title' => 'Testimonial 1',
+        ]);
 
         $data = [
             'testimonial_group_id' => $testimonialGroup->id,
@@ -94,7 +94,7 @@ class TestimonialGroupTranslationControllerTest extends TestCase
             'testimonial_group_translation_id' => 2,
             'language_code' => 'es',
             'title' => 'Spanish testimonial group title updated',
-          ]);
+        ]);
         $response = $this->followingRedirects()
                          ->put('/testimonialGroupTranslations/update', $attributes);
         $response->assertViewIs('laravel-testimonials::testimonialGroups.index')
@@ -121,7 +121,7 @@ class TestimonialGroupTranslationControllerTest extends TestCase
             'testimonial_group_translation_id' => 2,
             'language_code' => 'es',
             'title' => '',
-          ]);
+        ]);
         $response = $this->followingRedirects()
                          ->put('/testimonialGroupTranslations/update', $attributes);
         $response->assertSessionHasErrors();

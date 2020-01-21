@@ -2,8 +2,8 @@
 
 namespace DavideCasiraghi\LaravelTestimonials\Tests;
 
-use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelTestimonials\Models\TestimonialGroup;
+use Illuminate\Foundation\Testing\WithFaker;
 
 class TestimonialGroupControllerTest extends TestCase
 {
@@ -15,12 +15,12 @@ class TestimonialGroupControllerTest extends TestCase
     public function it_runs_the_test_testimonial_group_factory()
     {
         $testimonialGroup = factory(TestimonialGroup::class)->create([
-                            'title' => 'test title',
-                        ]);
+            'title' => 'test title',
+        ]);
         $this->assertDatabaseHas('testimonial_group_translations', [
-                                'locale' => 'en',
-                                'title' => 'test title',
-                ]);
+            'locale' => 'en',
+            'title' => 'test title',
+        ]);
     }
 
     /** @test */
@@ -102,7 +102,7 @@ class TestimonialGroupControllerTest extends TestCase
         $attributes = ([
             'title' => 'test title updated',
             'description' => 'test description updated',
-          ]);
+        ]);
 
         $response = $this->followingRedirects()
                          ->put('/testimonialGroups/'.$testimonialGroup->id, $attributes);
